@@ -1,0 +1,29 @@
+{
+    "name": "devxnetx/bo-api-laravel",
+    "description": "Laravel wrapper for BO-API-PHP package for burzi-obiavi.com",
+    "license": "MIT",
+    "type": "library",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Lord George",
+            "email": "devxnetx@gmail.com"
+        }
+    ],
+    "require": {
+        "devxnetx/bo-api-php": "0.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Devxnetx\\BoApiLaravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Devxnetx\\BoApiLaravel\\BoApiLaravelServiceProvider"
+            ]
+        }
+    }
+
+}
