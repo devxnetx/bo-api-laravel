@@ -18,10 +18,19 @@ class BoApiLaravelServiceProvider extends ServiceProvider
 
     public function boot ()
     {
+        $this->publishes([
+            __DIR__.'/../config/burziobiavi.php' => config_path('burziobiavi.php'),
+        ]);
     }
 
     public function register ()
     {
-        
+        // Automatically apply the package configuration
+        $this->mergeConfigFrom(__DIR__ . '/../config/burziobiavi.php', 'burziobiavi');
+
+        // Register the main class to use with the facade
+        $this->app->singleton('burziobiavi', function () {
+            return new BurziObiavi(config('burziobiavi.username'), config('burziobiavi.password'));
+        });
     }
 }
