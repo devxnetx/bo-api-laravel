@@ -18,9 +18,11 @@ class BoApiLaravelServiceProvider extends ServiceProvider
 
     public function boot ()
     {
-        $this->publishes([
-            __DIR__.'/../config/burziobiavi.php' => config_path('burziobiavi.php'),
-        ]);
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/burziobiavi.php' => config_path('burziobiavi.php'),
+            ]);
+        }
     }
 
     public function register ()

@@ -1,4 +1,5 @@
 {
+    "version": "0.1.0",
     "name": "devxnetx/bo-api-laravel",
     "description": "Laravel wrapper for BO-API-PHP package for burzi-obiavi.com",
     "license": "MIT",
